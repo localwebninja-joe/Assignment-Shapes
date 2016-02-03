@@ -11,8 +11,11 @@ class Calculator {
 	 * @return int
 	 */
 	public function surfaceArea(array $shapes)
-	{
-		return "undefined";
+	{	
+		foreach ($shapes as $index => $shape) {
+			$total[] = $shape->area();
+		}
+		return array_sum($total);
 	}
 
 	/**
@@ -23,7 +26,12 @@ class Calculator {
 	 */
 	public function totalVolume(array $shapes)
 	{
-		return "undefined";
+		foreach ($shapes as $index => $shape) {
+			if(method_exists($shape, 'volume')) {
+			    $total[] = $shape->volume();
+			}
+		}
+		return array_sum($total);
 	}
 
 }

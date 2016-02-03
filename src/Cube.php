@@ -2,9 +2,9 @@
 
 namespace Shapes;
 
-include_once('ShapeInterface.php');
+include_once('ThreeDShapeInterface.php');
 
-class Square implements ShapeInterface {
+class Cube implements ThreeDShapeInterface {
 
 	protected $side;
 
@@ -19,23 +19,23 @@ class Square implements ShapeInterface {
 	}
 
 	/**
-	 * Get the area x ^2
+	 * Get the area
 	 *
 	 * @return int
 	 */
 	public function area()
 	{
-		return pow($this->side, 2);
+		return 6 * pow($this->side, 2);
 	}
 
 	/**
-	 * Get the perimeter
+	 * Get the volume
 	 *
 	 * @return int
 	 */
-	public function perimeter()
+	public function volume()
 	{
-		return 4 * $this->side;
+		return pow($this->side, 3);
 	}
 
 }

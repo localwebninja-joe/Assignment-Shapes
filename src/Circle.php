@@ -25,7 +25,7 @@ class Circle implements ShapeInterface {
 	 */
 	public function area()
 	{
-		return pi() * sqrt($this->radius);
+		return pi() * pow($this->radius, 2);
 	}
 
 	/**
